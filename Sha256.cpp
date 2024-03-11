@@ -1,4 +1,4 @@
-// Copyright Eric Chauvin 2022 - 2023.
+// Copyright Eric Chauvin 2022 - 2024.
 
 
 
@@ -58,7 +58,7 @@
 void Sha256::appendPadding( CharBuf& charBuf )
 {
 const Uint64 originalLength =
-             Casting::i32ToU64( charBuf.getLast());
+           Casting::i32ToU64( charBuf.getLast());
 
 // StIO::printF( "originalLength: " );
 // StIO::printFD( Casting::u64ToI32(

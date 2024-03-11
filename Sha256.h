@@ -1,4 +1,4 @@
-// Copyright Eric Chauvin 2022 - 2023.
+// Copyright Eric Chauvin 2022 - 2024.
 
 
 
@@ -27,10 +27,8 @@
 #include "../CppMem/Uint32Array.h"
 
 
-// -Wno-unsafe-buffer-usage
+#include "../CppMem/MemoryWarnTop.h"
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
 
 
 class Sha256
@@ -156,11 +154,15 @@ class Sha256
     // 256 bit hash length.
 
   public:
-  inline Sha256( void )
+  static const Int32 BlockSize = 64; // Bytes.
+  // 256 bits is 32 bytes.
+  static const Int32 HashSize = 32;
+
+  Sha256( void )
     {
     }
 
-  inline Sha256( const Sha256& in )
+  Sha256( const Sha256& in )
     {
     if( in.testForCopy )
       return;
@@ -168,7 +170,7 @@ class Sha256
     throw "Sha256 copy constructor.";
     }
 
-  inline ~Sha256( void )
+  ~Sha256( void )
     {
     }
 
@@ -185,4 +187,4 @@ class Sha256
 
   };
 
-#pragma clang diagnostic pop
+#include "../CppMem/MemoryWarnBottom.h"
