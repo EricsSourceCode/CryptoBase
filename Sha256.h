@@ -185,6 +185,9 @@ class Sha256
              const CharBuf& key,
              const CharBuf& message );
 
+  void makeHash( CharBuf& result, 
+                 const CharBuf& message );
+
   };
 
 #include "../CppMem/MemoryWarnBottom.h"
