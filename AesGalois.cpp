@@ -438,5 +438,6 @@ makeAuthTag( aaData, cipherBufShort, J0,
 if( !authTag.isEqual( authTagTest ))
   throw "Auth tags are not equal.";
 
-StIO::putS( "Auth tags are equal in decrypt." );
+// StIO::putS(
+//      "Auth tags are equal in decrypt." );
 }
