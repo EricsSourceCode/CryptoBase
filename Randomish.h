@@ -1,4 +1,5 @@
-// Copyright Eric Chauvin 2022
+// Copyright Eric Chauvin 2022 - 2024.
+
 
 
 // This is licensed under the GNU General
@@ -16,17 +17,8 @@
 // random.  It is random enough for now
 // to test an algorithm.
 
-// I'm not writing a long and in-depth book
-// on randomness just yet.
-// The more complex something is, the more
-// random it looks.  The generated key used in
-// TLS is complex. SHA 256 makes a random looking
-// series of bytes.
-// Is the Universe just a
-// series of meaningless random events?
-// Or is it complex?
-// I won't be answering that question any
-// time soon.
+// But it needs to be done better.
+
 
 
 #include "../CppBase/BasicTypes.h"
@@ -40,5 +32,7 @@ class Randomish
   public:
   static void makeRandomBytes( CharBuf& cBuf,
                              const Int32 howMany );
+
+  static Float32 makeRandomFloat32( void );
 
   };

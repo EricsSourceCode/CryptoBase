@@ -1,4 +1,4 @@
-// Copyright Eric Chauvin 2022 - 2023.
+// Copyright Eric Chauvin 2022 - 2024.
 
 
 
@@ -57,4 +57,22 @@ for( Int32 count = 0; count < 100000; count++ )
     return;
 
   }
+}
+
+
+Float32 Randomish::makeRandomFloat32( void )
+{
+// This is crude.
+
+CharBuf cBuf;
+Int32 bytes = 0;
+makeRandomBytes( cBuf, 10 );
+bytes = cBuf.getU8( 0 );
+bytes <<= 8;
+bytes |= cBuf.getU8( 1 );
+bytes <<= 8;
+bytes |= cBuf.getU8( 2 );
+
+Float32 result = static_cast<Float32>( bytes );
+return result;
 }

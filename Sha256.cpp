@@ -393,7 +393,7 @@ getHash( result );
 
 
 
-void Sha256::makeHash( CharBuf& result, 
+void Sha256::makeHash( CharBuf& result,
                        const CharBuf& message )
 {
 processAllBlocks( message );
@@ -403,6 +403,3 @@ getHash( result );
 // showHash();
 // StIO::putS( "\n\n" );
 }
-
-
-
