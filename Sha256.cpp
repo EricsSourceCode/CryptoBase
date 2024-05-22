@@ -53,6 +53,8 @@
 // echo -n "abc" | sha256sum
 // ba7816bf...
 
+#include "../CppMem/MemoryWarnTop.h"
+
 
 
 void Sha256::appendPadding( CharBuf& charBuf )
@@ -403,3 +405,7 @@ getHash( result );
 // showHash();
 // StIO::putS( "\n\n" );
 }
+
+
+
+#include "../CppMem/MemoryWarnBottom.h"
